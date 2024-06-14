@@ -1,13 +1,20 @@
 import React from 'react';
-import Item from './Item';
+import { products } from '../data'; 
 
-const ItemList = ({ items }) => {
+const ItemList = () => {
   return (
-    <div>
-      {items.map(item => (
-        <Item key={item.id} item={item} />
+    <ul className="item-list">
+      {products.map(product => (
+        <li key={product.id} className="item">
+          <div className="image-container">
+            <img src={product.image} alt={product.name} />
+          </div>
+          <h2>{product.name}</h2>
+          <p>{product.description}</p>
+          <p>${product.price.toFixed(2)}</p>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
 

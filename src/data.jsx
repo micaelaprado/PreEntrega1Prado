@@ -1,7 +1,7 @@
-import balsamoLabial from './assets/balsamoLabial.jpg';
-import contornoDeOjos from './assets/contornoDeOjos.jpg';
-import cremaHumectante from './assets/cremaHumectante.jpg';
-import locionFacial from './assets/locionFacial.jpg';
+import balsamoLabial from './assets/balsamolabial.jpg';
+import contornoDeOjos from './assets/contornodeojos.jpg';
+import cremaHumectante from './assets/cremahumectante.jpg';
+import locionFacial from './assets/locionfacial.jpg';
 import mascarilla from './assets/mascarilla.jpg';
 import serum from './assets/serum.jpg';
 

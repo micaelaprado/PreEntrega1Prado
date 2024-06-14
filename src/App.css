@@ -1,3 +1,4 @@
+/* Variables globales */
 :root {
   --first-color: #f5e1da;
   --second-color: #f1f1f1;
@@ -22,6 +23,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Estilos generales del body */
 body {
   margin: 0;
   display: flex;
@@ -34,6 +36,7 @@ body {
   color: var(--font-color);
 }
 
+/* Estilos para los enlaces */
 a {
   font-weight: 500;
   color: var(--link-color);
@@ -44,12 +47,14 @@ a:hover {
   color: var(--link-hover-color);
 }
 
+/* Estilos para los títulos */
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
   margin: 0.5em 0;
 }
 
+/* Estilos para los botones */
 button {
   border-radius: 8px;
   border: 1px solid var(--button-border-color);
@@ -71,6 +76,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* Estilos para la barra de navegación */
 nav {
   background: var(--third-color);
   padding: 1em;
@@ -108,6 +114,7 @@ nav ul li a:hover {
   color: var(--first-color);
 }
 
+/* Estilos para el contenedor de la lista de productos */
 .item-list-container {
   background: var(--second-color);
   padding: 2em;
@@ -131,6 +138,8 @@ nav ul li a:hover {
   border-radius: 8px;
   text-align: center;
   transition: transform 0.25s, box-shadow 0.25s;
+  position: relative; /* Posición relativa para el contenedor del ítem */
+  overflow: hidden; /* Oculta el contenido que se desborde */
 }
 
 .item-list-container ul li:hover {
@@ -138,12 +147,25 @@ nav ul li a:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.item-list-container ul li img {
+/* Contenedor adicional para limitar el tamaño de la imagen */
+.item-list-container ul li .image-container {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
+  display: flex; /* Usa flexbox para centrar la imagen */
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Oculta el contenido que se desborde */
 }
 
+.item-list-container ul li .image-container img {
+  max-width: 100%; /* Asegura que la imagen no se extienda más allá de su contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 8px;
+  display: block; /* Elimina el espacio extra bajo la imagen */
+}
+
+/* Estilos para el contenedor de detalles del producto */
 .item-detail-container {
   background: var(--second-color);
   padding: 2em;
@@ -170,6 +192,7 @@ nav ul li a:hover {
   margin: 0.5em 0;
 }
 
+/* Widget de carrito */
 .cart-widget {
   display: flex;
   align-items: center;
@@ -190,18 +213,25 @@ nav ul li a:hover {
   font-size: 0.9em;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: var(--font-color);
-    background-color: #ffffff;
+/* Media queries para dispositivos móviles */
+@media (max-width: 768px) {
+  /* Ajustes específicos para dispositivos móviles */
+  .item-list-container ul {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Reducir el tamaño de las columnas */
   }
 
-  a:hover {
-    color: #747bff;
+  .item-list-container ul li {
+    padding: 0.5em; /* Reducir el padding de los elementos de la lista */
   }
 
-  button {
-    background-color: #f9f9f9;
+  .item-detail-container {
+    padding: 1em; /* Reducir el padding del contenedor de detalles del producto */
   }
-
+  
+  .item-list-container ul li .image-container img {
+    max-width: 100%; /* Asegura que la imagen no se extienda más allá de su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 8px;
+    display: block; /* Elimina el espacio extra bajo la imagen */
+  }
 }

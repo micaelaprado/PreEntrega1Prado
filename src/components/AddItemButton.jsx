@@ -4,11 +4,13 @@ import { CartContext } from '../context/CartContext';
 const AddItemButton = ({ item }) => {
   const { addItem } = useContext(CartContext);
 
-  const handleAdd = () => {
+  const handleClick = () => {
     addItem(item);
   };
 
-  return <button onClick={handleAdd}>Agregar al Carrito</button>;
+  return (
+    <button onClick={handleClick}>Agregar al carrito</button>
+  );
 };
 
 export default AddItemButton;
